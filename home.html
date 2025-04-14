@@ -21,7 +21,7 @@
     <nav class="navbar navbar-expand-md navbar-light fixed-top border-secondary shadow-lg bg-white">
         <div class="container-xxl">
             <a class="navbar-brand" href="home.html">
-                <img src="uploads/Logo.png" alt="logo">
+                <img src="jj/Logo.png" alt="logo">
                 <strong>Roman</strong> cars
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
