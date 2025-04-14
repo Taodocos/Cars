@@ -46,11 +46,14 @@
 <section class="bg-light">
 
 <nav class="navbar navbar-expand-md navbar-light fixed-top border-secondary shadow-lg bg-white">
-    <div class="container-xxl">
-        <h1 class="navbar-brand"><strong>JONNY</strong> cars</h1>
-    </div>
-    <div class="collapse navbar-collapse justify-content-end" id="main-nav">
-        <ul class="navbar-nav">
+        <div class="container-xxl">
+            <h1 class="navbar-brand"><strong>JONNY</strong> cars</h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="main-nav">
+            <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link fw-bold" href="home.html"><strong>Home</strong></a>
             </li>
@@ -98,14 +101,15 @@
                             <p class="card-text">Price: $<?php echo $price; ?></p>
                         </div>
                     </div>
-                    <div class="description">
+                    <!-- <div class="description">
                         <p><?php echo $description; ?></p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         <?php } ?>
     </div>
 </div>
 </section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
