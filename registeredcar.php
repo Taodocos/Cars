@@ -67,7 +67,7 @@
             ?>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card shadow bg-white" data-bs-toggle="collapse" data-bs-target="#description-<?php echo $id; ?>">
-                        <img src='jj/<?php echo $image; ?>' class="card-img-top" alt="<?php echo $name; ?>">
+                        <img src='uploads/<?php echo $image; ?>' class="card-img-top" alt="<?php echo $name; ?>">
                         <div class="card-body text-center">
                             <h5 class="card-title"><?php echo $name; ?></h5>
                             <p class="card-text">Manufacture Date: <?php echo $manuda; ?></p>
