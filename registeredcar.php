@@ -1,13 +1,14 @@
+<?php
+session_start();
+if (isset($_GET['logged'])) {
+    header("location:index.php");
+    session_destroy();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php 
-    session_start();
-    if(isset($_GET['logged'])) {
-        Header("location:index.php");
-        session_destroy();
-    }
-    ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -31,9 +32,9 @@
 <section class="bg-light">
 <nav class="navbar navbar-expand-md navbar-light fixed-top border-secondary shadow-lg bg-white">
         <div class="container-xxl">
-            <a class="navbar-brand" href="regregisterdecar.php">
-            <img src="uploads/Logo.png" alt="logo" style="height: 40px;"> <!-- Adjust logo size -->
-                            <strong>R</strong> cars
+            <a class="navbar-brand" href="regcar.php">
+                <img src="uploads/Logo.png" alt="logo" style="height: 40px;">
+                <strong>Roman</strong> cars
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -54,7 +55,7 @@
         </div>
     </nav>
     <div class="container-lg my-5">
-    <br/><br/>   <br/><br/>
+        <br/><br/>   
         <h3 class="fw-bold display-6 text-center">Cars Available Here</h3>
         <div class="row my-4 align-items-center justify-content-center g-4">
             <?php
@@ -62,15 +63,15 @@
             $select = mysqli_query($jcon, "SELECT * FROM cars"); 
             while ($row = mysqli_fetch_assoc($select)) {
                 $id = $row['id'];
-                $image = $row['image'];
+                $image = base64_encode($row['image']); // Encode image data
                 $name = $row['name'];
                 $manuda = $row['manuda'];
                 $price = $row['price'];
-                $description = $row['description']; // Fetching the description
+                $description = $row['description'];
             ?>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card shadow bg-white">
-                        <img src='uploads/<?php echo $image; ?>' class="card-img-top" alt="<?php echo $name; ?>" data-bs-toggle="collapse" data-bs-target="#description-<?php echo $id; ?>">
+                        <img src='data:image/jpeg;base64,<?php echo $image; ?>' class="card-img-top" alt="<?php echo $name; ?>" data-bs-toggle="collapse" data-bs-target="#description-<?php echo $id; ?>">
                         <div class="card-body text-center">
                             <h5 class="card-title" data-bs-toggle="collapse" data-bs-target="#description-<?php echo $id; ?>"><?php echo $name; ?></h5>
                             <p class="card-text">Manufacture Date: <?php echo $manuda; ?></p>
