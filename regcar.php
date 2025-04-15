@@ -90,7 +90,7 @@ if (isset($_POST['reset'])) {
         <div class="container-xxl">
             <a class="navbar-brand" href="regcar.php">
             <img src="uploads/Logo.png" alt="logo" style="height: 40px;"> <!-- Adjust logo size -->
-                            <strong>Roman</strong> cars
+                            <strong>R</strong> cars
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
