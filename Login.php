@@ -54,7 +54,7 @@
         </div>
     </nav>
         <div class="container-lg my-5 justify-content-center align-items-center">
-            <br/><br/>   <br/><br/>
+            <br/><br/>  
             <h3 class="fw-bold display-6 text-center ">LOG IN</h3>
             <div class="row my-12 align-items-center justify-content-center fw-light g-3 ">
                 <div class="col-8 col-lg-4 col-xl-3 shadow bg-white">
