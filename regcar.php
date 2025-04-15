@@ -81,13 +81,17 @@ if (isset($_POST['reset'])) {
             font-weight: bold; /* Ensure labels are bold */
         }
     </style>
+
     <title>New Car Registration</title>
 </head>
 <body>
 <section class="bg-light">
 <nav class="navbar navbar-expand-md navbar-light fixed-top border-secondary shadow-lg bg-white">
         <div class="container-xxl">
-            <h1 class="navbar-brand"><strong>JONNY</strong> cars</h1>
+            <a class="navbar-brand" href="regcar.php">
+            <img src="uploads/Logo.png" alt="logo" style="height: 40px;"> <!-- Adjust logo size -->
+                            <strong>Roman</strong> cars
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -108,6 +112,7 @@ if (isset($_POST['reset'])) {
 </nav>
 
 <div class="container-lg my-5 justify-content-center align-items-center">
+    <br/><br/>    <br/><br/>
     <h3 class="fw-bold display-6 text-center">Car Registration</h3>
     <div class="row my-4 align-items-center justify-content-center fw-light g-3">
         <div class="col-12 col-lg-8 shadow bg-white"> <!-- Increased card size -->
@@ -146,5 +151,6 @@ if (isset($_POST['reset'])) {
 </div>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
