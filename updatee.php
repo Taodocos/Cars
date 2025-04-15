@@ -43,7 +43,7 @@ if(isset($_POST['reset']))
 <nav class="navbar navbar-expand-md navbar-light fixed-top border-secondary shadow-lg bg-white">
         <div class="container-xxl">
             <a class="navbar-brand" href="car_details.php">
-            <img src="uploads/Logo.png" alt="logo" style="height: 40px;"> <!-- Adjust logo size -->
+            <img src="jj/Logo.png" alt="logo" style="height: 40px;"> <!-- Adjust logo size -->
                             <strong>Roman</strong> cars
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
