@@ -10,6 +10,7 @@
 <body>
 	
 <section class="bg-light">
+	
         <div class="container-lg my-5 justify-content-center align-items-center">
             <h3 class="fw-bold display-6 text-center ">To buy car register here</h3>
             <div class="row my-12 align-items-center justify-content-center fw-light g-8 ">
@@ -72,6 +73,10 @@ while ($row = mysqli_fetch_array($select)) {
 		?>
 
 </tr>
+<?php
+}
+}
+}
 </tbody>
 </table>
 </body>
