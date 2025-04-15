@@ -8,48 +8,27 @@ if (isset($_POST['submit'])) {
     $description = validate($_POST['description']);
 
     // Prepare to insert car details
-    $insert = "INSERT INTO cars (name, manuda, price, description, image, image1, image2, image3) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $insert = "INSERT INTO cars (name, manuda, price, description, image) VALUES (?, ?, ?, ?, ?)";
     $stmt = $jcon->prepare($insert);
 
-    // Initialize image paths
-    $imagePaths = ['', '', '', ''];
+    // Check if an image is uploaded
+    if (isset($_FILES['images']) && $_FILES['images']['error'][0] == 0) {
+        // Read the first image file
+        $imageData = file_get_contents($_FILES['images']['tmp_name'][0]);
 
-    // Ensure the uploads directory exists
-    if (!is_dir('uploads')) {
-        mkdir('uploads', 0755, true);
-    }
+        // Bind parameters
+        // Use 's' for string and 'b' for blob
+        $stmt->bind_param("ssiss", $name, $manuda, $price, $description, $imageData);
 
-    // Handle image uploads
-    // Check if at least 4 images are uploaded
-    if (isset($_FILES['images']) && count($_FILES['images']['name']) >= 4) {
-        for ($i = 0; $i < 4; $i++) {
-            if (isset($_FILES['images']['name'][$i]) && $_FILES['images']['name'][$i] != '') {
-                $image = $_FILES['images']['name'][$i];
-                $targetFilePath = 'uploads/' . basename($image); // Correctly save to the uploads directory
-
-                // Move the uploaded file to the uploads directory
-                if (move_uploaded_file($_FILES['images']['tmp_name'][$i], $targetFilePath)) {
-                    $imagePaths[$i] = basename($image); // Store only the filename for database insertion
-                } else {
-                    echo "<script>alert('Failed to upload image: " . htmlspecialchars($image) . "');</script>";
-                    return; // Stop processing if upload fails
-                }
-            }
+        // Execute the prepared statement
+        if ($stmt->execute()) {
+            echo "<script>alert('Successfully registered!!!');</script>";
+            echo "<script>window.location='regcar.php';</script>";
+        } else {
+            echo "<script>alert('Error: " . htmlspecialchars($stmt->error) . "');</script>";
         }
     } else {
-        echo "<script>alert('Please select at least 4 images.');</script>";
-        return; // Return early if not enough images are uploaded
-    }
-
-    // Bind parameters
-    $stmt->bind_param("ssisssss", $name, $manuda, $price, $description, $imagePaths[0], $imagePaths[1], $imagePaths[2], $imagePaths[3]);
-
-    // Execute the prepared statement
-    if ($stmt->execute()) {
-        echo "<script>alert('Successfully registered!!!');</script>";
-        echo "<script>window.location='regcar.php';</script>";
-    } else {
-        echo "<script>alert('Error: " . htmlspecialchars($stmt->error) . "');</script>";
+        echo "<script>alert('Please upload at least one image.');</script>";
     }
 
     $stmt->close();
@@ -81,7 +60,6 @@ if (isset($_POST['reset'])) {
             font-weight: bold; /* Ensure labels are bold */
         }
     </style>
-
     <title>New Car Registration</title>
 </head>
 <body>
@@ -90,7 +68,7 @@ if (isset($_POST['reset'])) {
         <div class="container-xxl">
             <a class="navbar-brand" href="regcar.php">
             <img src="uploads/Logo.png" alt="logo" style="height: 40px;"> <!-- Adjust logo size -->
-                            <strong>R</strong> cars
+            <strong>Roman</strong> cars
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -107,12 +85,12 @@ if (isset($_POST['reset'])) {
             <li class="nav-item">
                 <a class="nav-link fw-bold" href="about.html"><strong>About us</strong></a>
             </li>
-        </ul>
-    </div>
+            </ul>
+        </div>
 </nav>
 
 <div class="container-lg my-5 justify-content-center align-items-center">
-    <br/><br/>    <br/><br/>
+    <br/><br/><br/><br/>
     <h3 class="fw-bold display-6 text-center">Car Registration</h3>
     <div class="row my-4 align-items-center justify-content-center fw-light g-3">
         <div class="col-12 col-lg-8 shadow bg-white"> <!-- Increased card size -->
@@ -132,7 +110,7 @@ if (isset($_POST['reset'])) {
                             <input type="number" class="form-control" name="price" required>
                         </div>
                         <div class="mb-3 text-start">
-                            <label class="form-label">Pictures of Car (Select at least 4)</label>
+                            <label class="form-label">Pictures of Car (Select at least 1)</label>
                             <input type="file" name="images[]" class="form-control" accept=".jpg, .png, .jpeg" multiple required>
                         </div>
                         <div class="mb-3">
@@ -151,6 +129,5 @@ if (isset($_POST['reset'])) {
 </div>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
