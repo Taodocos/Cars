@@ -91,7 +91,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title"><?php echo $name; ?></h5>
                         <div class="text-center my-4">
-                            <a href="https://t.me/yourtelegramlink" class="text-decoration-none mx-2" target="_blank">
+                            <a href="https://t.me/eagle_s_eye04" class="text-decoration-none mx-2" target="_blank">
                                 <i class="fab fa-telegram fa-2x"></i>
                             </a>
                             <a href="https://wa.me/yourwhatsapplink" class="text-decoration-none mx-2" target="_blank">
