@@ -23,7 +23,7 @@
 
 	 <nav class="navbar navbar-expand-md navbar-light fixed-top border-secondary shadow-lg bg-white">
                             <div class="container-xxl">
-                                <h1 class="navbar-brand"><strong>JONNY</strong> cars</h1>
+                                <h1 class="navbar-brand"><strong>R</strong> cars</h1>
                             </div>
                             <div class="collapse navbar-collapse justify-content-end" id="main-nav">
                                 <ul class="navbar-nav">
