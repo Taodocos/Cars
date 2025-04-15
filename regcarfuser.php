@@ -97,7 +97,7 @@
                             <a href="https://wa.me/yourwhatsapplink" class="text-decoration-none mx-2" target="_blank">
                                 <i class="fab fa-whatsapp fa-2x"></i>
                             </a>
-                            <a href="https://instagram.com/yourinstagramlink" class="text-decoration-none mx-2" target="_blank">
+                            <a href="https://www.instagram.com/eagleseye4444/#" class="text-decoration-none mx-2" target="_blank">
                                 <i class="fab fa-instagram fa-2x"></i>
                             </a>
                         </div>
