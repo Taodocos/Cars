@@ -38,21 +38,18 @@
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="main-nav">
             <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link fw-bold" href="home.html"><strong>Home</strong></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link fw-bold" href="regcar.php"><strong>Register cars</strong></a>
-                                    </li>
-                                    <!-- <li class="nav-item">
-                                        <a class="nav-link fw-bold" href="Login.php"><strong>Log in</strong></a>
-                                    </li> -->
-                                    <li class="nav-item">
-                                        <a class="nav-link fw-bold" href="about.html"><strong>About us</strong></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="home.html"><strong>Home</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="regcar.php"><strong>Register cars</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="about.html"><strong>About us</strong></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="container-lg my-5">
         <h3 class="fw-bold display-6 text-center">Cars Available Here</h3>
         <div class="row my-4 align-items-center justify-content-center g-4">
@@ -68,14 +65,14 @@
                 $description = $row['description']; // Fetching the description
             ?>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="card shadow bg-white" data-bs-toggle="collapse" data-bs-target="#description-<?php echo $id; ?>">
-                        <img src='uploads/<?php echo $image; ?>' class="card-img-top" alt="<?php echo $name; ?>">
+                    <div class="card shadow bg-white">
+                        <img src='uploads/<?php echo $image; ?>' class="card-img-top" alt="<?php echo $name; ?>" data-bs-toggle="collapse" data-bs-target="#description-<?php echo $id; ?>">
                         <div class="card-body text-center">
-                            <h5 class="card-title"><?php echo $name; ?></h5>
+                            <h5 class="card-title" data-bs-toggle="collapse" data-bs-target="#description-<?php echo $id; ?>"><?php echo $name; ?></h5>
                             <p class="card-text">Manufacture Date: <?php echo $manuda; ?></p>
                             <p class="card-text">Price: $<?php echo $price; ?></p>
                             <a href="updatee.php?id=<?php echo $id; ?>" class="btn btn-secondary">Update</a>
-                            <a href="deletee.php?id=<?php echo $id; ?>" class="btn btn-danger">Delete</a>
+                            <a href="deletee.php?id=<?php echo $id; ?>" class="btn btn-danger" onclick="event.stopPropagation();">Delete</a>
                         </div>
                     </div>
                     <div id="description-<?php echo $id; ?>" class="collapse mt-2">
@@ -86,9 +83,6 @@
                 </div>
             <?php } ?>
         </div>
-        <!-- <div class="text-center my-4">
-            <a href="1stpage.html" class="btn btn-primary">Click Here to Buy a Car</a>
-        </div> -->
     </div>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
