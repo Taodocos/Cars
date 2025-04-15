@@ -22,7 +22,7 @@
         <div class="container-xxl">
             <a class="navbar-brand" href="home.html">
                 <img src="jj/Logo.png" alt="logo">
-                <strong>Roman</strong> cars
+                <strong>R</strong> cars
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
