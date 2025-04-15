@@ -21,7 +21,7 @@
     <nav class="navbar navbar-expand-md navbar-light fixed-top border-secondary shadow-lg bg-white">
         <div class="container-xxl">
             <a class="navbar-brand" href="home.html">
-                <img src="jj/Logo.png" alt="logo">
+                <img src="uploads/Logo.png" alt="logo">
                 <strong>Roman</strong> cars
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,22 +52,22 @@
                 <div class="carousel-item active">
                     <img src="jj/c2.jpg" class="d-block w-100" alt="Slide 1">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Yeju University College</h5>
-                        <p>Found in Amhara region, Woldia town. The college was formed in 2011 E.C.</p>
+                        <h5>Roman car sales</h5>
+                        <p>You can found your dream cars here!</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="jj/c9.jpg" class="d-block w-100" alt="Slide 2">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Importance of Education</h5>
-                        <p>Education is the key scheme to develop a country, with Ethiopia giving great attention.</p>
+                        <h5>Roman car sales</h5>
+                        <p>You can found car salers and buyres here! </p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="jj/c1.jpg" class="d-block w-100" alt="Slide 3">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Mission of the College</h5>
-                        <p>To provide good quality education and extract skilled individuals.</p>
+                        <h5>Mission</h5>
+                        <p>To meet your needs!</p>
                     </div>
                 </div>
             </div>
