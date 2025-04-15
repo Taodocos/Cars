@@ -20,25 +20,12 @@
             object-fit: cover; 
         }
         .card {
-            cursor: pointer; /* Indicate that the card is clickable */
-            transition: transform 0.2s; /* Smooth hover effect */
-            position: relative; /* Positioning for absolute child */
+            cursor: pointer; 
+            transition: transform 0.2s; 
+            position: relative; 
         }
         .card:hover {
-            transform: scale(1.05); /* Slightly enlarge the card on hover */
-        }
-        .description {
-            display: none; /* Hide description by default */
-            position: absolute; 
-            bottom: 0; /* Position at the bottom of the card */
-            left: 0;
-            right: 0;
-            background-color: white; /* Background for the description */
-            padding: 10px;
-            border-top: 1px solid #ddd; /* Optional border */
-        }
-        .card:hover .description {
-            display: block; /* Show description on hover */
+            transform: scale(1.05); 
         }
     </style>
 </head>
@@ -48,8 +35,8 @@
 <nav class="navbar navbar-expand-md navbar-light fixed-top border-secondary shadow-lg bg-white">
         <div class="container-xxl">
             <a class="navbar-brand" href="regcarfuser.php">
-            <img src="uploads/Logo.png" alt="logo" style="height: 40px;"> <!-- Adjust logo size -->
-                            <strong>R</strong> cars
+            <img src="uploads/Logo.png" alt="logo" style="height: 40px;"> 
+            <strong>R</strong> cars
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -63,12 +50,12 @@
             <li class="nav-item">
                 <a class="nav-link fw-bold" href="about.html"><strong>About us</strong></a>
             </li>
-        </ul>
-    </div>
+            </ul>
+        </div>
 </nav>
 
 <div class="container-lg my-5">
-    <br/>  <br/>    <br/><br/>
+    <br/><br/><br/><br/>
     
     <h3 class="fw-bold display-6 text-center">Cars Available Here</h3>
     <div class="row my-4 align-items-center justify-content-center g-4">
@@ -77,7 +64,7 @@
         $select = mysqli_query($jcon, "SELECT * FROM cars"); 
         while ($row = mysqli_fetch_assoc($select)) {
             $id = $row['id'];
-            $image = $row['image'];
+            $imageData = base64_encode($row['image']); // Encode binary data
             $name = $row['name'];
             $manuda = $row['manuda'];
             $price = $row['price'];
@@ -85,8 +72,7 @@
         ?>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="card shadow bg-white" onclick="window.location.href='car_details.php?id=<?php echo $id; ?>';">
-                    <img src='uploads/<?php echo !empty($image) ? $image : 'default.jpg'; ?>' class="card-img-top" alt="<?php echo $name; ?>">
-                
+                    <img src='data:image/jpeg;base64,<?php echo $imageData; ?>' class="card-img-top" alt="<?php echo $name; ?>">
 
                     <div class="card-body text-center">
                         <h5 class="card-title"><?php echo $name; ?></h5>
@@ -106,9 +92,6 @@
                             <p class="card-text">Price: $<?php echo $price; ?></p>
                         </div>
                     </div>
-                    <!-- <div class="description">
-                        <p><?php echo $description; ?></p>
-                    </div> -->
                 </div>
             </div>
         <?php } ?>
