@@ -36,7 +36,7 @@
         <div class="container-xxl">
             <a class="navbar-brand" href="regcarfuser.php">
             <img src="uploads/Logo.png" alt="logo" style="height: 40px;"> 
-            <strong>R</strong> cars
+            <strong>Roman</strong> cars
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -76,7 +76,14 @@
 
                     <div class="card-body text-center">
                         <h5 class="card-title"><?php echo $name; ?></h5>
-                        <div class="text-center my-4">
+                        
+                        <div>
+                            <p class="card-text">Manufacture Date: <?php echo $manuda; ?></p>
+                            <p class="card-text">Price: $<?php echo $price; ?></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center my-4">
                             <a href="https://t.me/eagle_s_eye04" class="text-decoration-none mx-2" target="_blank">
                                 <i class="fab fa-telegram fa-2x"></i>
                             </a>
@@ -87,13 +94,8 @@
                                 <i class="fab fa-instagram fa-2x"></i>
                             </a>
                         </div>
-                        <div>
-                            <p class="card-text">Manufacture Date: <?php echo $manuda; ?></p>
-                            <p class="card-text">Price: $<?php echo $price; ?></p>
-                        </div>
-                    </div>
-                </div>
             </div>
+            
         <?php } ?>
     </div>
 </div>
